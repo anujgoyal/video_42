@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bNQ-7C-Upr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="w2e-Tx-b1R">
             <objects>
-                <viewController id="AJi-x2-saK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="AJi-x2-saK" customClass="FirstViewController" customModule="video_42" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7bk-bw-Osw"/>
                         <viewControllerLayoutGuide type="bottom" id="36L-6U-Hqf"/>
@@ -22,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-179" y="368"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="oYJ-ke-zXI">
             <objects>
-                <viewController id="bNQ-7C-Upr" sceneMemberID="viewController">
+                <viewController id="bNQ-7C-Upr" customClass="TabBarViewController" customModule="video_42" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="buI-bf-FAs"/>
                         <viewControllerLayoutGuide type="bottom" id="D9w-BL-hii"/>
@@ -34,22 +35,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFA-zT-ybb">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFA-zT-ybb" userLabel="Tab Bar View">
                                 <rect key="frame" x="0.0" y="509" width="320" height="59"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSt-xj-33O">
+                                        <rect key="frame" x="31" y="11" width="50" height="40"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBlueButton:" destination="bNQ-7C-Upr" eventType="touchUpInside" id="0mk-u9-3Mh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-78-z1h">
+                                        <rect key="frame" x="135" y="10" width="50" height="40"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-Nb-gHw">
+                                        <rect key="frame" x="243" y="10" width="50" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-v5-Noq" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="1" width="320" height="509"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VFA-zT-ybb" secondAttribute="trailing" constant="-16" id="PyM-AT-ZAL"/>
+                            <constraint firstItem="VFA-zT-ybb" firstAttribute="leading" secondItem="tgl-ew-ica" secondAttribute="leadingMargin" constant="-16" id="aPX-qN-rXw"/>
+                            <constraint firstItem="D9w-BL-hii" firstAttribute="top" secondItem="VFA-zT-ybb" secondAttribute="bottom" id="lBc-Oh-2oy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containView" destination="7Mg-v5-Noq" id="e9W-bd-uY2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYd-A5-xQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="166" y="-251"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="video_42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="vXZ-lx-hvc" customClass="SecondViewController" customModule="video_42" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gJr-zN-Uft"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3S-MW-YsL"/>
@@ -64,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="168.53333333333333" y="368.25333333333333"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="zZq-sp-9XH">
             <objects>
-                <viewController id="eu9-IX-COE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="eu9-IX-COE" customClass="ThirdViewController" customModule="video_42" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aff-5O-orb"/>
                         <viewControllerLayoutGuide type="bottom" id="Zfi-30-LWe"/>
