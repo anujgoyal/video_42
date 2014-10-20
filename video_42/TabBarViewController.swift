@@ -58,6 +58,11 @@ class TabBarViewController: UIViewController {
     }
 
     @IBAction func onBlueButton(sender: AnyObject) {
+        // 1h32m of video #4
+        firstVC.willMoveToParentViewController(nil)
+        firstVC.removeFromParentViewController()
+        firstVC.didMoveToParentViewController(nil)
+        
         firstVC.view.frame = containView.frame
         containView.addSubview(firstVC.view)
     }
