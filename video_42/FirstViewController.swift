@@ -12,6 +12,7 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("1 VC: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }

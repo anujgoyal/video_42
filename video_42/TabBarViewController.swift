@@ -17,6 +17,8 @@ class TabBarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("Tab VC: viewDidLoad")
+
         var storyboard = UIStoryboard(name:"Main", bundle: nil)
         
         firstVC =
@@ -29,6 +31,7 @@ class TabBarViewController: UIViewController {
             storyboard.instantiateViewControllerWithIdentifier("ThirdViewController") as UIViewController
         
         // setup scrollview
+        NSLog("setup scrollview")
         firstVC.view.frame = containView.frame
         containView.addSubview(firstVC.view)
 
@@ -46,6 +49,7 @@ class TabBarViewController: UIViewController {
         
         // need to scroll
         containView.contentSize = CGSize(width: 320*3, height: 568)
+        NSLog("Tab VC: viewDidLoad end")
     }
     
     override func didReceiveMemoryWarning() {

@@ -12,6 +12,7 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("2 VC: viewDidLoad")
 
         // Do any additional setup after loading the view.
     }
