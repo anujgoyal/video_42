@@ -27,6 +27,25 @@ class TabBarViewController: UIViewController {
         
         thirdVC =
             storyboard.instantiateViewControllerWithIdentifier("ThirdViewController") as UIViewController
+        
+        // setup scrollview
+        firstVC.view.frame = containView.frame
+        containView.addSubview(firstVC.view)
+
+        secondVC.view.frame = containView.frame
+        secondVC.view.frame.origin.x += 320
+        containView.addSubview(secondVC.view)
+
+        thirdVC.view.frame = containView.frame
+        thirdVC.view.frame.origin.x += 640
+        containView.addSubview(thirdVC.view)
+    
+        // set paging enabled
+        containView.pagingEnabled = true
+        containView.bounces = false
+        
+        // need to scroll
+        containView.contentSize = CGSize(width: 320*3, height: 568)
     }
     
     override func didReceiveMemoryWarning() {
