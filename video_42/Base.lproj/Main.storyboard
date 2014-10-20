@@ -54,6 +54,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onGreenButton:" destination="bNQ-7C-Upr" eventType="touchUpInside" id="4Pi-FK-DzG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-Nb-gHw">
                                         <rect key="frame" x="243" y="10" width="50" height="40"/>
@@ -61,14 +64,16 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onOrangeButton:" destination="bNQ-7C-Upr" eventType="touchUpInside" id="cuT-YX-MsS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Mg-v5-Noq" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="1" width="320" height="509"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lsq-am-mnF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,7 +83,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containView" destination="7Mg-v5-Noq" id="e9W-bd-uY2"/>
+                        <outlet property="containView" destination="Lsq-am-mnF" id="Aom-Fn-f1q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYd-A5-xQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,7 +13,7 @@ class TabBarViewController: UIViewController {
     var firstVC: UIViewController!
     var secondVC: UIViewController!
     var thirdVC: UIViewController!
-    @IBOutlet weak var containView: UIView!
+    @IBOutlet weak var containView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,17 @@ class TabBarViewController: UIViewController {
         firstVC.view.frame = containView.frame
         containView.addSubview(firstVC.view)
     }
+
+    @IBAction func onGreenButton(sender: AnyObject) {
+        secondVC.view.frame = containView.frame
+        containView.addSubview(secondVC.view)
+    }
+
+    @IBAction func onOrangeButton(sender: AnyObject) {
+        thirdVC.view.frame = containView.frame
+        containView.addSubview(thirdVC.view)
+    }
+
     /*
     // MARK: - Navigation
 
